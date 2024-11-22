@@ -1,0 +1,36 @@
+services:
+  ui:
+    build:
+      context: ./ui
+      dockerfile: ./dockerfile
+    working_dir: /app/ui
+    ports:
+      - 3001:3001
+    volumes:
+      - ./ui/:/app/ui
+
+  client:
+    build:
+      context: ./client
+      dockerfile: ./dockerfile
+    working_dir: /app/client
+    ports:
+      - 3002:3002
+    depends_on:
+      - ui
+    volumes:
+      - ./client/:/app/client
+
+
+  host:
+    build:
+      context: ./host
+      dockerfile: ./dockerfile
+    working_dir: /app/host
+    ports:
+      - 3000:3000
+    depends_on:
+      - ui
+      - client
+    volumes:
+      - ./host/:/app/host
