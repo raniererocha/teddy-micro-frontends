@@ -1,0 +1,6 @@
+/client/node_modules
+/client/dist
+/host/node_modules
+/host/dist
+/ui/node_modules
+/ui/dist
