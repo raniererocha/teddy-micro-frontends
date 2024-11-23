@@ -3,11 +3,13 @@ import { forwardRef } from "react";
 
 interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
     children: React.ReactNode;
+    placeholder?: string;
 }
 export const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => {
     return (
         <div className="relative" >
-            <select ref={ref} {...props} className="block w-full appearance-none bg-transparent border border-[#d9d9d9] rounded-md py-1 px-3 pr-8 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#EC6724] focus:border-[#EC6724]">
+            <select ref={ref} {...props} className={`block w-full appearance-none bg-transparent border border-[#d9d9d9] rounded-md py-1 px-3 pr-8 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#EC6724] focus:border-[#EC6724] ${props.className}`}>
+                {props.placeholder && <option value="" hidden>{props.placeholder}</option>}
                 {props.children}
             </select>
             {/* Chevron */}
