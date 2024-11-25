@@ -10,14 +10,14 @@ export const Text = (props: TextProps) => {
     const {children, variant = 'default'} = props
 
     if (variant === 'principal') {
-        return (<h1 className="text-3xl font-sans">{children}</h1>)
+        return (<h1 className={`text-3xl font-sans ${props.className}`}>{children}</h1>)
     }
 
     if (variant === 'title') {
         return(
-            <h3 className="text-base font-bold font-sans">{children}</h3>
+            <h3 className={`text-base font-bold font-sans ${props.className}`}>{children}</h3>
         )
     }
 
-    return (<p className="text-sm font-sans">{children}</p>)
+    return (<p className={`text-sm font-sans ${props.className}`}>{children}</p>)
 };
