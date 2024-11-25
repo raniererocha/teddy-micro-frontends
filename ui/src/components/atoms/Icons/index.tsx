@@ -1,4 +1,4 @@
-import { LuPlus, LuPencil, } from 'react-icons/lu'
+import { LuPlus, LuPencil, LuX } from 'react-icons/lu'
 import { GoTrash } from "react-icons/go";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoArrowBackCircle } from "react-icons/io5";
@@ -81,6 +81,7 @@ export {
     GoTrash as TrashIcon,
     RxHamburgerMenu as MenuIcon,
     IoArrowBackCircle as BackIcon,
+    LuX as CloseIcon,
     HomeIcon,
     UserIcon,
     AppsIcon,
