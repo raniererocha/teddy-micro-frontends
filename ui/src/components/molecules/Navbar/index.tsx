@@ -4,8 +4,9 @@ import { Text } from "../../atoms/Text"
 import logoImage from '../../../assets/logo.png'
 import { useCallback, useState } from "react"
 
-interface NavbarProps {
+export interface NavbarProps {
     links: Record<LINK_KEY, HandleFunctionProps>
+    username: string
 }
 type LINK_KEY = 'clientes' | 'selecionados' | 'sair'
 type HandleFunctionProps = () => void
@@ -43,7 +44,7 @@ export const Navbar = (props: NavbarProps) => {
                     <li><Button data-active={activeButton === "selecionados"} variant="link" onClick={handleSelecionados}> Clientes Selecionados</Button></li>
                     <li><Button data-active={activeButton === "sair"} variant="link" onClick={handleSair}> Sair</Button></li>
                 </ul>
-                <div className="flex items-center"><Text>Olá, <strong>Usuário</strong>!</Text></div>
+                <div className="flex items-center"><Text>Olá, <strong>{props.username || 'Usuário'}</strong>!</Text></div>
             </nav>     
         </header>
     )
