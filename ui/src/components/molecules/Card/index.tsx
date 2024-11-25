@@ -3,7 +3,7 @@ import { Button } from "../../atoms/Button"
 import { PencilIcon, PlusIcon, TrashIcon } from "../../atoms/Icons"
 import { Text } from "../../atoms/Text"
 
-interface CardProps {
+export interface CardProps {
     name: string
     salary: number
     company: number
